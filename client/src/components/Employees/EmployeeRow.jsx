@@ -12,7 +12,7 @@ const EmployeeRow = ({ employee, dataFields, headerTexts }) => {
       key={employee.firstName + employee.lastName + dataField}
       fontWeight="semibold"
     >
-      {typeof employee[dataField] === "number" ?
+      {dataField === "salary" ?
         employee[dataField].toLocaleString("en-CA", { style: "currency", currency: "CAD" }).slice(0, -3)
         : employee[dataField]}
     </Td>
