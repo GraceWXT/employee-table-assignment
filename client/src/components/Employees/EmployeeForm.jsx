@@ -8,8 +8,10 @@ import {
 import FormInput from "./FormInput";
 
 const EmployeeForm = ({
-  onClose, handleAdd, handleEdit, employee, dataFields, headerTexts
+  onClose, employee, dataFields, headerTexts, setEmployees, employeeIndex
 }) => {
+
+  // UseState to keep track of form data
   const defaultData = (() => {
     if (employee) return employee;
 
@@ -20,6 +22,8 @@ const EmployeeForm = ({
     return defaultData;
   })();
   const [employeeData, setEmployeeData] = useState(defaultData);
+
+  // Render the inputs
   const formInputs = dataFields.map((fieldName, index) => (
     <FormInput
       key={index}
@@ -29,7 +33,24 @@ const EmployeeForm = ({
       setEmployeeData={setEmployeeData}
     />
   ));
-  console.log('employeeData :>> ', employeeData);
+
+  // Handle add employee
+  const handleAdd = (event) => {
+    event.preventDefault();
+    setEmployees(prev => [...prev, employeeData]);
+    onClose();
+  };
+
+  // Handle edit employee
+  const handleEdit = (event) => {
+    event.preventDefault();
+    setEmployees(prev => {
+      const newEmployees = [...prev];
+      newEmployees[employeeIndex] = employeeData;
+      return newEmployees;
+    });
+    onClose();
+  };
 
   return (
     <>
@@ -44,7 +65,7 @@ const EmployeeForm = ({
             colorScheme="blue"
             mr={3}
             type="submit"
-            onClick={employee ? handleEdit : handleAdd}
+            onClick={employeeIndex !== undefined ? handleEdit : handleAdd}
           >
           Save
           </Button>
