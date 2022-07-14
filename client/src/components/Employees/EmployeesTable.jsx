@@ -13,7 +13,7 @@ const EmployeesTable = ({ employees, setEmployees }) => {
 
   const employeeRows = employees.map((employee, employeeIndex) => (
     <EmployeeRow
-      key={employee.firstName + employee.lastName}
+      key={employeeIndex + employee.firstName + employee.lastName}
       employee={employee}
       dataFields={dataFields}
       headerTexts={headerTexts}
