@@ -2,7 +2,7 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
-const AddModal = ({ handleAdd, dataFields, headerTexts }) => {
+const AddModal = ({ handleAdd, dataFields, headerTexts, setEmployees }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -13,7 +13,7 @@ const AddModal = ({ handleAdd, dataFields, headerTexts }) => {
         colorScheme="green"
         onClick={onOpen}
       >
-          Add Employee
+        Add Employee
       </Button>
       <ModalContainer
         isOpen={isOpen}

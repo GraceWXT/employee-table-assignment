@@ -2,7 +2,7 @@ import { Td, Button, useDisclosure } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
-const EditModal = ({ employee, dataFields, headerTexts, header }) => {
+const EditModal = ({ employee, dataFields, headerTexts, header, setEmployees, employeeIndex }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Td>

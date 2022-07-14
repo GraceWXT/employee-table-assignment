@@ -23,7 +23,7 @@ const Employees = () => {
     <Center>
       <VStack w="45em" marginTop="2em">
         <Heading textTransform="uppercase" >Employees</Heading>
-        {employees.length && <EmployeesTable employees={employees} />}
+        {employees.length && <EmployeesTable employees={employees} setEmployees={setEmployees}/>}
       </VStack>
     </Center>
 

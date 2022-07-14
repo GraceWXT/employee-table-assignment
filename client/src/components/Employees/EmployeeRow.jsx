@@ -3,7 +3,7 @@ import DeleteModal from "./DeleteModal";
 import EditModal from "./EditModal";
 
 
-const EmployeeRow = ({ employee, dataFields, headerTexts }) => {
+const EmployeeRow = ({ employee, dataFields, headerTexts, setEmployees, employeeIndex }) => {
 
   // Map over the data fields to create table cells for one employee
   // Format the currency if necessary
@@ -26,12 +26,16 @@ const EmployeeRow = ({ employee, dataFields, headerTexts }) => {
         employee={employee}
         dataFields={dataFields}
         headerTexts={headerTexts}
+        setEmployees={setEmployees}
+        employeeIndex={employeeIndex}
         header="Edit Employee"
       />
       <DeleteModal
         employee={employee}
         dataFields={dataFields}
         headerTexts={headerTexts}
+        setEmployees={setEmployees}
+        employeeIndex={employeeIndex}
         header="Delete Employee"
       />
     </Tr>

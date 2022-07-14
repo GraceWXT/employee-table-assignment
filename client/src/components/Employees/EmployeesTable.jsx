@@ -3,7 +3,7 @@ import EmployeeRow from "./EmployeeRow";
 import HeaderRow from "./HeaderRow";
 import AddModal from "./AddModal";
 
-const EmployeesTable = ({ employees }) => {
+const EmployeesTable = ({ employees, setEmployees }) => {
 
   const dataFields = Object.keys(employees[0]);
   const headerTexts = dataFields.map(fieldName => (
@@ -11,19 +11,16 @@ const EmployeesTable = ({ employees }) => {
       .replace(/^./, match => match.toUpperCase())
   ));
 
-  const employeeRows = employees.map(employee => (
+  const employeeRows = employees.map((employee, employeeIndex) => (
     <EmployeeRow
       key={employee.firstName + employee.lastName}
       employee={employee}
       dataFields={dataFields}
       headerTexts={headerTexts}
+      setEmployees={setEmployees}
+      employeeIndex={employeeIndex}
     />
   ));
-
-  // Handle add employee
-  const handleAdd = () => {
-
-  };
 
   return (
     <>
@@ -36,9 +33,9 @@ const EmployeesTable = ({ employees }) => {
         </Tbody>
       </Table>
       <AddModal
-        handleAdd={handleAdd}
         dataFields={dataFields}
         headerTexts={headerTexts}
+        setEmployees={setEmployees}
       />
     </>
   );

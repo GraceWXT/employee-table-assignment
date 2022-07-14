@@ -2,7 +2,7 @@ import { Tr, Td, Button, useDisclosure, ModalBody } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
-const DeleteModal = ({ employee, header }) => {
+const DeleteModal = ({ employee, header, setEmployees, employeeIndex }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Td>
