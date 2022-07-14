@@ -7,7 +7,7 @@ import {
   ModalFooter,
   ModalCloseButton} from "@chakra-ui/react";
 
-const ModalContainer = ({ isOpen, onClose, children }) => {
+const ModalContainer = ({ isOpen, onClose, header, children }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -15,7 +15,7 @@ const ModalContainer = ({ isOpen, onClose, children }) => {
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Create your account</ModalHeader>
+        <ModalHeader>{header}</ModalHeader>
         <ModalCloseButton />
         {children}
       </ModalContent>
