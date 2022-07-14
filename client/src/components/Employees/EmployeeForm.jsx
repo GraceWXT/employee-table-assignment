@@ -7,26 +7,13 @@ import {
   Input,
   VStack
 } from "@chakra-ui/react";
+import FormInput from "./FormInput";
 
 const EmployeeForm = ({ onClose, handleAdd, employee, dataFields, headerTexts }) => {
 
-  const formInputs = dataFields.map((fieldName, index) => {
-
-    // if (employee.fieldName) {
-
-    // }
-    return (<FormControl>
-      <FormLabel
-        htmlFor={fieldName}
-      >
-        {headerTexts[index]}
-      </FormLabel>
-      <Input
-        id={fieldName}
-        placeholder={headerTexts[index]}
-      />
-    </FormControl>);
-  });
+  const formInputs = dataFields.map((fieldName, index) => (
+    <FormInput key={index} employee={employee} fieldName={fieldName} headerText={headerTexts[index]} />
+  ));
 
   return (
     <>
