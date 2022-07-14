@@ -16,6 +16,7 @@ const EmployeesTable = ({ employees }) => {
       key={employee.firstName + employee.lastName}
       employee={employee}
       dataFields={dataFields}
+      headerTexts={headerTexts}
     />
   ));
 
@@ -34,7 +35,11 @@ const EmployeesTable = ({ employees }) => {
           {employeeRows}
         </Tbody>
       </Table>
-      <AddModal handleAdd={handleAdd} />
+      <AddModal
+        handleAdd={handleAdd}
+        dataFields={dataFields}
+        headerTexts={headerTexts}
+      />
     </>
   );
 };

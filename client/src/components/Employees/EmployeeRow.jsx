@@ -3,7 +3,7 @@ import DeleteModal from "./DeleteModal";
 import EditModal from "./EditModal";
 
 
-const EmployeeRow = ({ employee, dataFields }) => {
+const EmployeeRow = ({ employee, dataFields, headerTexts }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -19,8 +19,16 @@ const EmployeeRow = ({ employee, dataFields }) => {
   return (
     <Tr>
       {tds}
-      <EditModal employee={employee}/>
-      <DeleteModal employee={employee}/>
+      <EditModal
+        employee={employee}
+        dataFields={dataFields}
+        headerTexts={headerTexts}
+      />
+      <DeleteModal
+        employee={employee}
+        dataFields={dataFields}
+        headerTexts={headerTexts}
+      />
     </Tr>
   );
 };
