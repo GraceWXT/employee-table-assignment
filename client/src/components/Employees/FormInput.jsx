@@ -11,10 +11,11 @@ const FormInput = ({ employee, fieldName, headerText, setEmployeeData}) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    console.log("fieldName", fieldName);
+    const fieldValue = fieldName === "salary" ? parseInt(event.target.value) : event.target.value;
+
     setEmployeeData(prev => {
       const updatedData = {...prev};
-      updatedData[fieldName] = event.target.value;
+      updatedData[fieldName] = fieldValue;
       return updatedData;
     });
   };
