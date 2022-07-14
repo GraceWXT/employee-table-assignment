@@ -1,10 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
+import Employees from "./Employees/Employees";
 
 const App = () => {
   return (
     <ChakraProvider>
       <div className="App">
-        Employees form
+        <Employees />
       </div>
     </ChakraProvider>
   );
