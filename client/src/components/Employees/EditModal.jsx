@@ -1,15 +1,19 @@
-import { Tr, Td, Button, useDisclosure, ModalBody } from "@chakra-ui/react";
+import { Td, Button, useDisclosure } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
-const EditModal = ({ employee }) => {
+const EditModal = ({ employee, dataFields, headerTexts }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Td>
       <Button variant="outline" colorScheme="orange" onClick={onOpen}>Edit</Button>
       <ModalContainer isOpen={isOpen} onClose={onClose}>
-        <EmployeeForm onClose={onClose}></EmployeeForm>
-        {employee.firstName}
+        <EmployeeForm
+          onClose={onClose}
+          employee={employee}
+          dataFields={dataFields}
+          headerTexts={headerTexts}
+        />
       </ModalContainer>
     </Td>
   );
