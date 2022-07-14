@@ -4,6 +4,6 @@ const App = () => {
       Employees form
     </div>
   );
-}
+};
 
 export default App;
