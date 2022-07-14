@@ -26,11 +26,13 @@ const EmployeeRow = ({ employee, dataFields, headerTexts }) => {
         employee={employee}
         dataFields={dataFields}
         headerTexts={headerTexts}
+        header="Edit Employee"
       />
       <DeleteModal
         employee={employee}
         dataFields={dataFields}
         headerTexts={headerTexts}
+        header="Delete Employee"
       />
     </Tr>
   );

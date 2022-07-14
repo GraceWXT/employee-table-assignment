@@ -18,7 +18,7 @@ const AddModal = ({ handleAdd, dataFields, headerTexts }) => {
       <ModalContainer
         isOpen={isOpen}
         onClose={onClose}
-        header="Add A New Employee"
+        header="Add Employee"
       >
         <EmployeeForm
           onClose={onClose}
