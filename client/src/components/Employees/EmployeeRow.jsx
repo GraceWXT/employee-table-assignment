@@ -32,8 +32,6 @@ const EmployeeRow = ({ employee, dataFields, headerTexts, setEmployees, employee
       />
       <DeleteModal
         employee={employee}
-        dataFields={dataFields}
-        headerTexts={headerTexts}
         setEmployees={setEmployees}
         employeeIndex={employeeIndex}
         header="Delete Employee"
