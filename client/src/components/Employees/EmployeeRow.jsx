@@ -1,6 +1,11 @@
-import { Tr, Td, Button } from "@chakra-ui/react";
+import { Tr, Td, Button, useDisclosure, ModalBody } from "@chakra-ui/react";
+import DeleteModal from "./DeleteModal";
+import EditModal from "./EditModal";
+
 
 const EmployeeRow = ({ employee, dataFields }) => {
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const tds = dataFields.map(dataField => (
     <Td
@@ -14,8 +19,8 @@ const EmployeeRow = ({ employee, dataFields }) => {
   return (
     <Tr>
       {tds}
-      <Td><Button variant="outline" colorScheme="orange">Edit</Button></Td>
-      <Td><Button variant="outline" colorScheme="red">Delete</Button></Td>
+      <EditModal employee={employee}/>
+      <DeleteModal employee={employee}/>
     </Tr>
   );
 };
