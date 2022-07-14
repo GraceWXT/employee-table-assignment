@@ -1,8 +1,12 @@
+import { ChakraProvider } from "@chakra-ui/react";
+
 const App = () => {
   return (
-    <div className="App">
-      Employees form
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        Employees form
+      </div>
+    </ChakraProvider>
   );
 };
 
