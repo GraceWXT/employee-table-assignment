@@ -24,7 +24,9 @@ const AddModal = ({ handleAdd, dataFields, headerTexts, setEmployees }) => {
           onClose={onClose}
           handleAdd={handleAdd}
           dataFields={dataFields}
-          headerTexts={headerTexts}/>
+          headerTexts={headerTexts}
+          setEmployees={setEmployees}
+        />
       </ModalContainer>
     </>
   );
