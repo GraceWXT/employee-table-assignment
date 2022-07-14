@@ -1,10 +1,8 @@
 import {
-  Button,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalCloseButton} from "@chakra-ui/react";
 
 const ModalContainer = ({ isOpen, onClose, header, children }) => {
