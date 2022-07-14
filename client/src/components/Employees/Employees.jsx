@@ -4,7 +4,6 @@ import axios from "../../api/axios";
 import { Heading, VStack, Center} from "@chakra-ui/react";
 
 import EmployeesTable from "./EmployeesTable";
-import AddModal from "./AddModal";
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
@@ -20,17 +19,11 @@ const Employees = () => {
       });
   }, []);
 
-  // Handle add employee
-  const handleAdd = () => {
-
-  };
-
   return (
     <Center>
       <VStack w="45em" marginTop="2em">
         <Heading textTransform="uppercase" >Employees</Heading>
         {employees.length && <EmployeesTable employees={employees} />}
-        <AddModal handleAdd={handleAdd} />
       </VStack>
     </Center>
 

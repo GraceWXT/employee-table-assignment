@@ -1,6 +1,7 @@
 import { Table, Thead, Tbody } from "@chakra-ui/react";
 import EmployeeRow from "./EmployeeRow";
 import HeaderRow from "./HeaderRow";
+import AddModal from "./AddModal";
 
 const EmployeesTable = ({ employees }) => {
 
@@ -18,15 +19,23 @@ const EmployeesTable = ({ employees }) => {
     />
   ));
 
+  // Handle add employee
+  const handleAdd = () => {
+
+  };
+
   return (
-    <Table>
-      <Thead>
-        <HeaderRow headerTexts={headerTexts}/>
-      </Thead>
-      <Tbody>
-        {employeeRows}
-      </Tbody>
-    </Table>
+    <>
+      <Table>
+        <Thead>
+          <HeaderRow headerTexts={headerTexts}/>
+        </Thead>
+        <Tbody>
+          {employeeRows}
+        </Tbody>
+      </Table>
+      <AddModal handleAdd={handleAdd} />
+    </>
   );
 };
 
