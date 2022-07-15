@@ -22,7 +22,14 @@ const Employees = () => {
   return (
     <Center>
       <VStack w="45em" marginTop="2em">
-        <Heading textTransform="uppercase" >Employees</Heading>
+        <Heading
+          textTransform="uppercase"
+          size="lg"
+          alignSelf="flex-start"
+          marginLeft="1.5rem"
+        >
+          Employees
+        </Heading>
         {employees.length && <EmployeesTable employees={employees} setEmployees={setEmployees}/>}
       </VStack>
     </Center>
