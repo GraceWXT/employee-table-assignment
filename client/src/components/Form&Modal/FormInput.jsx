@@ -4,7 +4,7 @@ import {
   FormLabel,
   Input} from "@chakra-ui/react";
 
-const FormInput = ({ employee, fieldName, headerText, setEmployeeData}) => {
+const FormInput = ({ employee, fieldName, headerText, setEmployeeData, isError }) => {
 
   const defaultValue = employee ? employee[fieldName] : "";
   const [value, setValue] = useState(defaultValue);
@@ -21,7 +21,7 @@ const FormInput = ({ employee, fieldName, headerText, setEmployeeData}) => {
   };
 
   return (
-    <FormControl isRequired>
+    <FormControl isRequired isInvalid={isError && !value}>
       <FormLabel
         htmlFor={fieldName}
       >

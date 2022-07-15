@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   ModalBody,
   ModalFooter,
+  Text,
   Button,
   VStack
 } from "@chakra-ui/react";
@@ -23,6 +24,7 @@ const EmployeeForm = ({
     return defaultData;
   })();
   const [employeeData, setEmployeeData] = useState(defaultData);
+  const [isError, setIsError] = useState(false);
 
   // Render the inputs
   const formInputs = dataFields.map((fieldName, index) => (
@@ -32,12 +34,23 @@ const EmployeeForm = ({
       fieldName={fieldName}
       headerText={headerTexts[index]}
       setEmployeeData={setEmployeeData}
+      isError={isError}
     />
   ));
+
+  // Check if all fields are filled
+  const isFilled = () => {
+    let isFilled = Object.values(employeeData).every(value => value !== "");
+    if (!isFilled) {
+      setIsError(true);
+    }
+    return isFilled;
+  };
 
   // Handle add employee
   const handleAdd = (event) => {
     event.preventDefault();
+    if (!isFilled()) return;
     setEmployees(prev => [...prev, employeeData]);
     onClose();
   };
@@ -45,6 +58,7 @@ const EmployeeForm = ({
   // Handle edit employee
   const handleEdit = (event) => {
     event.preventDefault();
+    if (!isFilled()) return;
     setEmployees(prev => {
       const newEmployees = [...prev];
       newEmployees[employeeIndex] = employeeData;
@@ -59,6 +73,7 @@ const EmployeeForm = ({
         <ModalBody pb={6}>
           <VStack spacing={5}>
             {formInputs}
+            {isError && <Text color="red">Please fill in all required fields before submitting.</Text>}
           </VStack>
         </ModalBody>
         <ModalFooter>
