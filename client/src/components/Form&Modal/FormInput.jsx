@@ -17,7 +17,7 @@ const FormInput = ({ employee, fieldName, headerText, setEmployeeData, isError }
     // Parse the salary input to integer
     const fieldValue = fieldName === "salary" ? parseInt(event.target.value) : event.target.value;
     // If the input is parsed to NaN, show the wrong type error
-    if (isNaN(fieldValue)) return setIsWrongType(true);
+    if (fieldName === "salary" && isNaN(fieldValue)) return setIsWrongType(true);
     // If it passed the above check while the error message is shown, remove the error
     if (isWrongType) setIsWrongType(false);
     // Set the validated data to status
