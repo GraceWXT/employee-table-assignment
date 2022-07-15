@@ -4,7 +4,7 @@ import { Tr, Th } from "@chakra-ui/react";
 const HeaderRow = ({ headerTexts }) => {
 
   const headers = headerTexts.map(header => (
-    <Th key={header} textTransform="none">{header}</Th>
+    <Th fontSize="sm" key={header} textTransform="none">{header}</Th>
   ));
 
   return (
