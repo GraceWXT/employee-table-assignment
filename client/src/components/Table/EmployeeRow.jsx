@@ -1,6 +1,6 @@
 import { Tr, Td } from "@chakra-ui/react";
-import DeleteModal from "./DeleteModal";
-import EditModal from "./EditModal";
+import DeleteModal from "../Form&Modal/DeleteModal";
+import EditModal from "../Form&Modal/EditModal";
 
 
 const EmployeeRow = ({ employee, dataFields, headerTexts, setEmployees, employeeIndex }) => {

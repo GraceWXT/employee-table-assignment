@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "../../api/axios";
+import axios from "../api/axios";
 
 import { Heading, VStack, Center} from "@chakra-ui/react";
 
-import EmployeesTable from "./EmployeesTable";
+import EmployeesTable from "./Table/EmployeesTable";
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
