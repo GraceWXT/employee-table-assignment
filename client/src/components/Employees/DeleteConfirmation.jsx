@@ -7,6 +7,12 @@ import {
 
 const DeleteConfirmation = ({ employee, setEmployees, employeeIndex, onClose }) => {
 
+  const handleDelete = () => {
+    setEmployees(prev => {
+      return prev.filter((employee, index) => index !== employeeIndex);
+    });
+  };
+
   return (
     <>
       <ModalBody pb={6}>
@@ -17,8 +23,7 @@ const DeleteConfirmation = ({ employee, setEmployees, employeeIndex, onClose }) 
         <Button
           colorScheme="red"
           mr={3}
-          type="submit"
-          // onClick={}
+          onClick={handleDelete}
         >
           Delete
         </Button>
