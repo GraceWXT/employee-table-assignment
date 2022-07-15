@@ -7,12 +7,14 @@ import {
 
 const DeleteConfirmation = ({ employee, setEmployees, employeeIndex, onClose }) => {
 
+  // Delete the employee at the given index
   const handleDelete = () => {
     setEmployees(prev => {
       return prev.filter((employee, index) => index !== employeeIndex);
     });
   };
 
+  // Double check with user before deleting
   return (
     <>
       <ModalBody pb={6}>
