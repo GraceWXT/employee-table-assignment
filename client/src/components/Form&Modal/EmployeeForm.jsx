@@ -47,7 +47,7 @@ const EmployeeForm = ({
     return isFilled;
   };
 
-  // Handle add employee
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!isFilled()) return;
