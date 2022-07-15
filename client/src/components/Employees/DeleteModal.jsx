@@ -1,6 +1,7 @@
-import { Tr, Td, Button, useDisclosure, ModalBody } from "@chakra-ui/react";
+import { Td, Button, useDisclosure } from "@chakra-ui/react";
+import DeleteConfirmation from "./DeleteConfirmation";
 import ModalContainer from "./ModalContainer";
-import EmployeeForm from "./EmployeeForm";
+
 
 const DeleteModal = ({ employee, header, setEmployees, employeeIndex }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -8,7 +9,12 @@ const DeleteModal = ({ employee, header, setEmployees, employeeIndex }) => {
     <Td>
       <Button variant="outline" colorScheme="red" onClick={onOpen}>Delete</Button>
       <ModalContainer isOpen={isOpen} onClose={onClose} header={header}>
-        <ModalBody>Delete? {employee.firstName}</ModalBody>
+        <DeleteConfirmation
+          employee={employee}
+          setEmployees={setEmployees}
+          employeeIndex={employeeIndex}
+          onClose={onClose}
+        />
       </ModalContainer>
     </Td>
   );
