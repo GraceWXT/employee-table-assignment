@@ -48,22 +48,18 @@ const EmployeeForm = ({
   };
 
   // Handle add employee
-  const handleAdd = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (!isFilled()) return;
-    setEmployees(prev => [...prev, employeeData]);
-    onClose();
-  };
-
-  // Handle edit employee
-  const handleEdit = (event) => {
-    event.preventDefault();
-    if (!isFilled()) return;
-    setEmployees(prev => {
-      const newEmployees = [...prev];
-      newEmployees[employeeIndex] = employeeData;
-      return newEmployees;
-    });
+    if (employeeIndex !== undefined) {
+      setEmployees(prev => {
+        const newEmployees = [...prev];
+        newEmployees[employeeIndex] = employeeData;
+        return newEmployees;
+      });
+    } else {
+      setEmployees(prev => [...prev, employeeData]);
+    }
     onClose();
   };
 
@@ -81,7 +77,7 @@ const EmployeeForm = ({
             colorScheme="blue"
             mr={3}
             type="submit"
-            onClick={employeeIndex !== undefined ? handleEdit : handleAdd}
+            onClick={handleSubmit}
           >
           Save
           </Button>
