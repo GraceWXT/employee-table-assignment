@@ -3,7 +3,7 @@ import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
 // The Add Employee button with the matching Modal
-const AddModal = ({ handleAdd, dataFields, headerTexts, setEmployees }) => {
+const AddModal = ({ dataFields, headerTexts, setEmployees }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -23,7 +23,6 @@ const AddModal = ({ handleAdd, dataFields, headerTexts, setEmployees }) => {
       >
         <EmployeeForm
           onClose={onClose}
-          handleAdd={handleAdd}
           dataFields={dataFields}
           headerTexts={headerTexts}
           setEmployees={setEmployees}
