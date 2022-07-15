@@ -2,6 +2,7 @@ import { Td, Button, useDisclosure } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
+// The Edit button with the matching Modal
 const EditModal = ({
   employee, dataFields, headerTexts, header, setEmployees, employeeIndex
 }) => {

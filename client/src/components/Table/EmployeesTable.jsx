@@ -1,7 +1,7 @@
 import { Table, Thead, Tbody } from "@chakra-ui/react";
 import EmployeeRow from "./EmployeeRow";
 import HeaderRow from "./HeaderRow";
-import AddModal from "./AddModal";
+import AddModal from "../Form&Modal/AddModal";
 
 const EmployeesTable = ({ employees, setEmployees }) => {
 

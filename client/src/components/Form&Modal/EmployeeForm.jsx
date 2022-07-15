@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import FormInput from "./FormInput";
 
+// The form for editing or adding an employee
 const EmployeeForm = ({
   onClose, employee, dataFields, headerTexts, setEmployees, employeeIndex
 }) => {

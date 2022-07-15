@@ -1,5 +1,6 @@
 import { Tr, Th } from "@chakra-ui/react";
 
+// The table headers row
 const HeaderRow = ({ headerTexts }) => {
 
   const headers = headerTexts.map(header => (

@@ -2,6 +2,7 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 import ModalContainer from "./ModalContainer";
 import EmployeeForm from "./EmployeeForm";
 
+// The Add Employee button with the matching Modal
 const AddModal = ({ handleAdd, dataFields, headerTexts, setEmployees }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
